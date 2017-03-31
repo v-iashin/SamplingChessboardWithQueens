@@ -14,6 +14,9 @@
 How to simulate a `m` by `n` chessboard with `k, k << mn` queens on it such that no queen defeats another.
 
 ## Algorithm
+
+_Translated from [Алгоритм имитации отжига (machinelearning.ru)](http://www.machinelearning.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B8%D0%BC%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8_%D0%BE%D1%82%D0%B6%D0%B8%D0%B3%D0%B0)_
+
 1. Choose any feasible condition and select initial and threshold temperature 
 2. Evaluate the initial condition
 3. Base step
@@ -43,7 +46,7 @@ Let us assume that the metric (energy) should be minimized. Then, if the new con
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;E" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;E" title="\Delta E" /></a> --- absolute value of difference between energies of the new and the current conditions;
 - <a href="https://www.codecogs.com/eqnedit.php?latex=T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T" title="T" /></a> --- current temperature.
 
-#### Reduce the temperature, if the reduced temperature is still higher that chosen threshold
-An important part of the algorithm is the rule of temperature reduction. The higher temperature the more likely the non-optimal condition will be accepted. However, as algorithm iterates the probability to accept non-optimal solution is lowering. The rule of temperature reduction should be chosen experimentally. It is important to be lower it monotonically to zero. A good solution is to multiply the temperature by some contant that is slightly less than 1.
+#### Reduce the temperature if the reduced temperature is still higher than a chosen threshold
+An important part of the algorithm is the rule of temperature reduction. The higher temperature the more likely the non-optimal condition will be accepted. However, as algorithm iterates the probability to accept non-optimal solution is lowering. The rule of temperature reduction should be chosen experimentally. It is important to be lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
 
-_Translated from [Алгоритм имитации отжига (machinelearning.ru)](http://www.machinelearning.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B8%D0%BC%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8_%D0%BE%D1%82%D0%B6%D0%B8%D0%B3%D0%B0)_
+
