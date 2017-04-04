@@ -3,7 +3,7 @@
 # matrix with 1 -- queen, 0 -- empty
 init_cond <- dget(file = 'init_cond.R')
 
-# returns a list of neighbours for a given a queen (its index) and a condition
+# returns a list of neighbours for a given queen (its index) and a condition
 neighbourhood <- dget(file = 'neighbourhood.R')
 
 # returns the number of queens that can be defeated by another given condition
