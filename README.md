@@ -42,19 +42,19 @@ Let us assume that the metric (energy) should be minimized. Then, if the new con
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\exp\bigg(\frac{\Delta&space;E}{T}\bigg)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\exp\bigg(\frac{\Delta&space;E}{T}\bigg)" title="P = \exp\bigg(\frac{\Delta E}{T}\bigg)" /></a> 
 
-- <a href="https://www.codecogs.com/eqnedit.php?latex=P" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P" title="P" /></a> --- probability of accepting the new condition if the energy is worse than the current's;
-- <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;E" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;E" title="\Delta E" /></a> --- absolute value of difference between energies of the new and the current conditions;
-- <a href="https://www.codecogs.com/eqnedit.php?latex=T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T" title="T" /></a> --- current temperature.
+- <a href="https://www.codecogs.com/eqnedit.php?latex=P" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P" title="P" /></a> — probability of accepting the new condition if the energy is worse than the current's;
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;E" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;E" title="\Delta E" /></a> — absolute value of difference between energies of the new and the current conditions;
+- <a href="https://www.codecogs.com/eqnedit.php?latex=T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T" title="T" /></a> — current temperature.
 
 #### Reduce the temperature if the reduced temperature is still higher than a chosen threshold
 An important part of the algorithm is the rule of temperature reduction. The higher temperature the more likely the non-optimal condition will be accepted. However, as algorithm iterates the probability to accept non-optimal solution is lowering. The rule of temperature reduction should be chosen experimentally. It is important to be lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
 
 ## Files
-`init_cond.R` --- generates a random chessbord given number of queens for arbitrary chessboard;
-`neighbourhood.R` --- returns a list of neighbours for a given queen (its index) and a condition;
-`energy.R` --- calculates the number of queens that can be defeated by another given condition;
-`change_cond.R` --- returns a changed condition that is different from the previous by one queen;
-`acceptance.R` --- returns boolean whether to accept the new condition given both conditions and a temperature;
-`simulated_annealing.R` --- returns the state with the optimum that the algorithm found given number of queens, dimentions, and whether to verbose the process.
+- `init_cond.R` — generates a random chessbord given number of queens for arbitrary chessboard;
+- `neighbourhood.R` — returns a list of neighbours for a given queen (its index) and a condition;
+- `energy.R` — calculates the number of queens that can be defeated by another given condition;
+- `change_cond.R` — returns a changed condition that is different from the previous by one queen;
+- `acceptance.R` — returns boolean whether to accept the new condition given both conditions and a temperature;
+- `simulated_annealing.R` — returns the state with the optimum that the algorithm found given number of queens, dimentions, and whether to verbose the process.
 
-`example.R` --- provides an example of use.
+- `example.R` — provides an example of use.
