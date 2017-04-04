@@ -56,5 +56,4 @@ An important part of the algorithm is the rule of temperature reduction. The hig
 - `change_cond.R` — returns a changed condition that is different from the previous by one queen;
 - `acceptance.R` — returns boolean whether to accept the new condition given both conditions and a temperature;
 - `simulated_annealing.R` — returns the state with the optimum that the algorithm found given number of queens, dimentions, and whether to verbose the process.
-
 - `example.R` — provides an example of use.
