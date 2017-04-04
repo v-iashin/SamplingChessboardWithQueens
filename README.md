@@ -49,4 +49,12 @@ Let us assume that the metric (energy) should be minimized. Then, if the new con
 #### Reduce the temperature if the reduced temperature is still higher than a chosen threshold
 An important part of the algorithm is the rule of temperature reduction. The higher temperature the more likely the non-optimal condition will be accepted. However, as algorithm iterates the probability to accept non-optimal solution is lowering. The rule of temperature reduction should be chosen experimentally. It is important to be lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
 
+## Files
+`init_cond.R` --- generates a random chessbord given number of queens for arbitrary chessboard;
+`neighbourhood.R` --- returns a list of neighbours for a given queen (its index) and a condition;
+`energy.R` --- calculates the number of queens that can be defeated by another given condition;
+`change_cond.R` --- returns a changed condition that is different from the previous by one queen;
+`acceptance.R` --- returns boolean whether to accept the new condition given both conditions and a temperature;
+`simulated_annealing.R` --- returns the state with the optimum that the algorithm found given number of queens, dimentions, and whether to verbose the process.
 
+`example.R` --- provides an example of use.
