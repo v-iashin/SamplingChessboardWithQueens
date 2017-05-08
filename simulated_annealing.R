@@ -1,7 +1,6 @@
 # returns the state with the optimum that the algorithm found given # of queens,
 # dimentions, and whether to show the progress
-function(queens, dims, verbose = FALSE, temp_max = 1,
-                                temp_min = 0.001, rate = 0.999) {
+function(queens, dims, verbose = FALSE, temp_max = 1, temp_min = 0.001, rate = 0.999) {
     
     # initial temperature is the max
     temperature <- temp_max
