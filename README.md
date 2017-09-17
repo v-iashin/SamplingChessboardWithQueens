@@ -26,19 +26,19 @@ _Translated from [Алгоритм имитации отжига (machinelearnin
 4. Reduce the temperature, if the reduced temperature is still higher than the chosen threshold, repeat the Base step 
 
 #### Choose a feasible state. Select an initial temperature
-A good idea is to start with a random state. Also, it is sometimes reasonable to choose the result of another algorithm as the initial state. The initial temperature can be chosen to be high. As a result, the algorithm will require substantial amount of time to complete. On the other hand, if it was chosen to be low the algorithm may stuck in a local optimum. Naturally, the initial temperature should be high and the rate of reducing the temperature should be close to 1 (generally, 0.99 or 0.999 appears to be a good choice).
+It is a good idea to randomly generate an initial state. Also, it is sometimes reasonable to choose the result of another algorithm as the initial state. The initial temperature can be chosen to be high. As a result, the algorithm will require a substantial amount of time to complete. On the other hand, if it was chosen to be quite low the algorithm may stuck in a local optimum.
 
 #### Evaluate the initial state
 This particular step depends on the task. Though, it is essential to choose a metric to optimize. In this algorithm, this metric is called _energy_. In case a proper metric cannot be found, it is reasonable to use another algorithm for optimization.
 
 #### Base step
-This step repeats for a chosen number of times (or just once) for each value of temperature. It is also possible to represent the number of repetitions as a function of temperature.
+This step repeats for a chosen number of times (or just once) for each value of temperature. Also, it is possible to represent the number of repetitions as a function of a current temperature.
 
 ##### Randomly change the current state
-This step depends on a given task. However, the changes in the states should be local. For example, in the TSP, a good strategy is to randomly choose two cities and exchange their position in the sequence. After that, there will be two states: the current and the new ones.
+This step depends on a given task, however, the changes in the states should be local. For example, in the TSP, a good strategy is to randomly select two cities and exchange their position in the sequence. After that, there will be two states: the current and the new ones.
 
 ##### Decide whether to accept the new state
-Let us assume that we want to minimize the metric (energy). Then, if a new state have a lower energy than a current one, the new state is accepted; however, if the new state have a lower energy than the current one, the new state is accepted with probability as follows
+Let us assume that we want to minimize the metric (energy). Then, if a new state have a lower energy than a current one, the new state is accepted; however, if the new state have a lower energy than the current one, the new state can still be accepted but with probability as follows
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\exp\bigg(\frac{\Delta&space;E}{T}\bigg)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\exp\bigg(\frac{\Delta&space;E}{T}\bigg)" title="P = \exp\bigg(\frac{\Delta E}{T}\bigg)" /></a> 
 
@@ -47,7 +47,7 @@ Let us assume that we want to minimize the metric (energy). Then, if a new state
 - <a href="https://www.codecogs.com/eqnedit.php?latex=T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T" title="T" /></a> — current temperature.
 
 #### Reduce the temperature if the reduced temperature is still higher than a chosen threshold
-An important part of the algorithm is the rule of the temperature reduction. The higher temperature the more likely the non-optimal state will be accepted. However, as algorithm iterates the probability of acceptance of the non-optimal solution is reducing. The rule of the temperature reduction should be chosen experimentally. It is important to lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
+An important part of the algorithm is the rule of the temperature reduction. The higher temperature the more likely the non-optimal state will be accepted. However, as algorithm iterates the probability of acceptance of the non-optimal solution reduces. The rule of the temperature reduction should be chosen experimentally though it is important to lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
 
 ## Files
 - `init_cond.R` — generates a random chessbord given number of queens for arbitrary chessboard;
