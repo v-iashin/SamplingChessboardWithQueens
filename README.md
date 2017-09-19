@@ -26,7 +26,7 @@ _Translated from [Алгоритм имитации отжига (machinelearnin
 4. Reduce the temperature, if the reduced temperature is still higher than the chosen threshold, repeat the Base step 
 
 #### Choose a feasible state. Select an initial temperature
-It is a good idea to randomly generate an initial state. Also, it is sometimes reasonable to choose the result of another algorithm as the initial state. The initial temperature can be chosen to be high. As a result, the algorithm will require a substantial amount of time to complete. On the other hand, if it was chosen to be quite low the algorithm may stuck in a local optimum.
+Generally, it is a good idea to randomly generate an initial state. Also, it is sometimes reasonable to choose the result of another algorithm as the initial state. If the initial temperature is chosen to be high the algorithm will require a substantial amount of time to complete. On the other hand, if it was chosen to be quite low the algorithm may stuck in a local optimum.
 
 #### Evaluate the initial state
 This particular step depends on the task. Though, it is essential to choose a metric to optimize. In this algorithm, this metric is called _energy_. In case a proper metric cannot be found, it is reasonable to use another algorithm for optimization.
