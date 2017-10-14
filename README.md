@@ -50,10 +50,10 @@ Let us assume that we want to minimize the metric (energy). Then, if a new state
 An important part of the algorithm is the rule of the temperature reduction. The higher temperature the more likely the non-optimal state will be accepted. However, as algorithm iterates the probability of acceptance of the non-optimal solution reduces. The rule of the temperature reduction should be chosen experimentally though it is important to lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
 
 ## Files
-- `init_cond.R` — generates a random chessbord given number of queens for arbitrary chessboard;
+- `init_cond.R` — generates a random chessbord given number of queens for an arbitrary chessboard;
 - `neighbourhood.R` — returns a list of neighbours for a given queen (its index) and a state;
-- `energy.R` — calculates the number of queens that can be defeated by another given state;
-- `change_cond.R` — returns a changed state that is different from the previous by one queen;
+- `energy.R` — calculates the number of queens that can be defeated by another ones given state;
+- `change_cond.R` — returns a changed state that is different from the previous state by one queen;
 - `acceptance.R` — returns boolean whether to accept the new state given both states and a temperature;
-- `simulated_annealing.R` — returns the state with the optimum that the algorithm found given number of queens, dimentions, and whether to verbose the process.
+- `simulated_annealing.R` — returns the state with the optimum that the algorithm found given the number of queens, dimentions, and whether to verbose the process;
 - `example.R` — provides an example of use.
