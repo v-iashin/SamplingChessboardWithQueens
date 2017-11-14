@@ -47,7 +47,7 @@ Let us assume that we want to minimize the metric (energy). Then, if a new state
 - <a href="https://www.codecogs.com/eqnedit.php?latex=T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?T" title="T" /></a> — current temperature.
 
 #### Reduce the temperature if the reduced temperature is still higher than a chosen threshold
-An important part of the algorithm is the rule of the temperature reduction. The higher temperature the more likely the non-optimal state will be accepted. However, as algorithm iterates the probability of acceptance of the non-optimal solution reduces. The rule of the temperature reduction should be chosen experimentally though it is important to lower it monotonically to zero. A good solution is to multiply the temperature by some constant that is slightly less than 1.
+An important part of the algorithm is the rule of the temperature reduction. The higher temperature the more likely the non-optimal state will be accepted. However, as algorithm iterates the probability of acceptance of the non-optimal solution reduces. The rule of the temperature reduction should be chosen experimentally though it is important to lower it monotonically to zero. A good approach is to multiply the temperature by some constant that is slightly less than 1.
 
 ## Files
 - `init_cond.R` — generates a random chessbord given number of queens for an arbitrary chessboard;
