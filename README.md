@@ -15,7 +15,7 @@ How to simulate a `m` by `n` chessboard with `k, k << m*n` queens on it such tha
 
 ## Algorithm
 
-_Translated from [Алгоритм имитации отжига (machinelearning.ru)](http://www.machinelearning.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B8%D0%BC%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8_%D0%BE%D1%82%D0%B6%D0%B8%D0%B3%D0%B0)_
+_Translation of [Алгоритм имитации отжига (machinelearning.ru)](http://www.machinelearning.ru/wiki/index.php?title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%B8%D0%BC%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8_%D0%BE%D1%82%D0%B6%D0%B8%D0%B3%D0%B0)_
 
 1. Choose a feasible state. Select an initial temperature
 2. Evaluate the chosen metric on the initial state
@@ -26,16 +26,16 @@ _Translated from [Алгоритм имитации отжига (machinelearnin
 4. Reduce the temperature, if the reduced temperature is still higher than the chosen threshold, repeat the Base step 
 
 #### Choose a feasible state. Select an initial temperature
-Generally, it is a good idea to randomly generate an initial state. Also, it is sometimes reasonable to choose the result of another algorithm as the initial state. If the initial temperature is chosen to be high the algorithm will require a substantial amount of time to complete. On the other hand, if it was chosen to be quite low the algorithm may stuck in a local optimum.
+Generally, it is a good idea to randomly generate an initial state. Also, the initial state might be the result of another algorithm. If the initial temperature is chosen to be too high the algorithm will require a substantial amount of time to complete. On the other hand, if it was chosen to be quite low the algorithm may stuck in a local optimum.
 
 #### Evaluate the initial state
-This particular step depends on the task. Though, it is essential to choose a metric to optimize. In this algorithm, this metric is called _energy_. In case a proper metric cannot be found, it is reasonable to use another algorithm for optimization.
+This particular step depends on the task one is doing. In any case though, it is essential to choose a metric to optimize. In this algorithm, this metric is called _energy_. If a proper metric cannot be found, it is recommended to use another algorithm for optimization.
 
 #### Base step
 This step repeats for a chosen number of times (or just once) for each value of temperature. Also, it is possible to represent the number of repetitions as a function of a current temperature.
 
 ##### Randomly change the current state
-This step depends on a given task, however, the changes in the states should be local. For example, in the TSP, a good strategy is to randomly select two cities and exchange their position in the sequence. After that, there will be two states: the current and the new ones.
+This step may vary from task to task but the changes in the states should be local. For example, in the TSP, a good strategy is to randomly select two cities and exchange their position in the sequence. After that, there will be two states: the current and the new ones.
 
 ##### Decide whether to accept the new state
 Let us assume that we want to minimize the metric (energy). Then, if a new state have a lower energy than a current one, the new state is accepted; however, if the new state have a lower energy than the current one, the new state can still be accepted but with probability as follows
